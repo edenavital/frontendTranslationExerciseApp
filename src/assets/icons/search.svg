@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+>
+    <!-- Generator: Sketch 3.7.1 (28215) - http://www.bohemiancoding.com/sketch -->
+    <title>search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="assets-svg-ready-1px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="search" fill="#000000">
+            <g id="Page-1" transform="translate(3.000000, 3.000000)">
+                <polygon id="Stroke-1"
+                         points="11.7423966 12.4495034 16.6463966 17.3535034 16.99995 17.7070568 17.7070568 16.99995 17.3535034 16.6463966 12.4495034 11.7423966 12.09595 11.3888432 11.3888432 12.09595"></polygon>
+                <path d="M13.5,7.5 C13.5,10.8138576 10.8138576,13.5 7.5,13.5 C4.18614237,13.5 1.5,10.8138576 1.5,7.5 C1.5,4.18614237 4.18614237,1.5 7.5,1.5 C10.8138576,1.5 13.5,4.18614237 13.5,7.5 L13.5,7.5 Z M14.5,7.5 C14.5,3.63385763 11.3661424,0.5 7.5,0.5 C3.63385763,0.5 0.5,3.63385763 0.5,7.5 C0.5,11.3661424 3.63385763,14.5 7.5,14.5 C11.3661424,14.5 14.5,11.3661424 14.5,7.5 L14.5,7.5 Z"
+                      id="Stroke-3"></path>
+            </g>
+        </g>
+    </g>
+</svg>
