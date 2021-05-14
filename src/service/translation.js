@@ -9,7 +9,6 @@ export const init = ({lang}) => {
             resources: {}
         }, (err, t) => {
             if (err) return reject(err);
-            global.i18n = i18n;
             resolve();
         });
     });

@@ -24,7 +24,6 @@ class ResourcesHeader extends Component {
 
     // Load the translations of ResourcesHeader
     loadResourceBundle = async () => {
-        console.log("LOl")
         await loadResourceBundle({ componentName: COMPONENT_NAME, langJson: englishLangObj });
         this.setState({isTranslationLoaded: true})
     }
