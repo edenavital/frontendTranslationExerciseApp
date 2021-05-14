@@ -20,22 +20,23 @@ const MainContainer = styled.main`
 
 export default class App extends Component {
 
-    async componentDidMount() {
-        await this.init();
-        await this.filterResources();
-    }
-
-    init = async () => {
-        await initTranlation({lang: 'en-US'});
-        this.setState({initCompleted: true});
-    };
-
     state = {
         initCompleted: false,
         resources: [],
         actions: [],
         selectedResourceId: ''
     };
+    
+    async componentDidMount() {
+        await this.init();
+        await this.filterResources();
+    }
+
+    init = async () => {
+        await initTranlation({ lang: 'en-US' });
+        this.setState({initCompleted: true});
+    };
+
     setResources = resources => {
         this.setState({resources});
     };
@@ -77,6 +78,7 @@ export default class App extends Component {
             fetchMissingActions(selectedResource.actionIds);
         }
     };
+    
     selectResource = (selectedResourceId, selectedResourceActionIds) => {
         const {fetchMissingActions, setSelectedResourceId} = this;
 
@@ -110,7 +112,8 @@ export default class App extends Component {
             selectResource,
             selectedResourceId
         };
-
+        
+        // make sure i18n object is initilized
         if (!initCompleted)
             return null;
 
