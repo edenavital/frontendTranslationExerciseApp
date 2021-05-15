@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import MockService from './service/mockService';
-import {init as initTranlation} from './service/translation';
+import {changeLanguage, init as initTranlation} from './service/translation';
 import styled from 'styled-components';
 import HeaderPanel from './components/HeaderPanel';
 import {GlobalStyle} from './styles/appDefaultStyles';
 import ResourcesContainer from './containers/ResourcesContainer';
 import DetailsViewContainer from './containers/DetailsViewContainer';
 import {headerPanelHeight, VerticalContainer} from './styles/commonStyles';
+import { SUPPORTED_LANGUAGES } from './constants';
 
 const ApplicationContainer = styled(VerticalContainer)`
     min-height: calc(100vh - ${headerPanelHeight});
@@ -24,7 +25,8 @@ export default class App extends Component {
         initCompleted: false,
         resources: [],
         actions: [],
-        selectedResourceId: ''
+        selectedResourceId: '',
+        selectedLanguege: SUPPORTED_LANGUAGES.ENGLISH
     };
     
     async componentDidMount() {
@@ -86,9 +88,14 @@ export default class App extends Component {
         fetchMissingActions(selectedResourceActionIds);
     };
 
+    switchLang = (lang) => {
+        changeLanguage(lang);
+        this.setState({selectedLanguege: lang})
+    }
+
     render() {
         const {
-            state: {initCompleted, resources, actions, selectedResourceId},
+            state: {initCompleted, resources, actions, selectedResourceId, selectedLanguege},
             filterResources,
             selectResource
         } = this;
@@ -125,6 +132,10 @@ export default class App extends Component {
                     <MainContainer>
                         <ResourcesContainer {...resourcesProps} />
                         <DetailsViewContainer {...detailsViewProps} />
+                        <div style={{ display: 'flex' }}>
+                            <button disabled={selectedLanguege === SUPPORTED_LANGUAGES.ENGLISH} onClick={this.switchLang.bind(this, SUPPORTED_LANGUAGES.ENGLISH)}>Switch to english</button>
+                            <button disabled={selectedLanguege === SUPPORTED_LANGUAGES.GERMAN} onClick={this.switchLang.bind(this, SUPPORTED_LANGUAGES.GERMAN)}>Switch to german</button>
+                        </div>
                     </MainContainer>
                 </ApplicationContainer>
             </>

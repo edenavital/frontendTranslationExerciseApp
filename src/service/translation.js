@@ -1,10 +1,10 @@
 import i18n from 'i18next';
-
+import { initReactI18next } from "react-i18next";
 // Initialize i18n object 
 export const init = ({lang}) => {
     return new Promise(async (resolve, reject) => {
 
-        i18n.init({
+        i18n.use(initReactI18next).init({
             lng: lang,
             resources: {}
         }, (err, t) => {
@@ -40,5 +40,11 @@ export const loadResourceBundle = async ({lang = "en-US", componentName, langJso
     //     return console.log("Language has been loaded already");
     // }
 
-    i18n.addResourceBundle(lang, componentName, langJson);
+    i18n.addResourceBundle(lang, componentName, langJson, true);
+}
+
+export const changeLanguage = ( lang ) => {
+    i18n.changeLanguage(lang, (err, t) => {
+        if (err) return console.log('something went wrong loading', err);
+    });
 }
